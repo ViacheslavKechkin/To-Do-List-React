@@ -24,6 +24,12 @@ const App = () => {
     });
   }
 
+  const removeTask = async (id) => {
+    await axios.delete(`http://localhost:8000/deleteTask?id=${id}`).then(res => {
+      setTasks(res.data.data);
+    });
+  }
+
   return (
     <div className='App'>
       <h1 className='header'>My ToDo</h1>
@@ -33,6 +39,7 @@ const App = () => {
         text={text}
       />
       <Todolist
+        removeTask={removeTask}
         text={text}
         tasks={tasks}
       />

@@ -3,8 +3,8 @@ import editImg from './img/edit.png';
 import deleteImg from './img/delete.png';
 import './Todo.scss';
 
-const Todo = ({text, item}) => {
-
+const Todo = ({text, item, removeTask}) => {
+  
   return (
     <div className="el-todo">
       <input
@@ -16,7 +16,7 @@ const Todo = ({text, item}) => {
         {item.text}
       </div>
       <img src={editImg} alt="edit"/>
-      <img src={deleteImg} alt="delete"/>
+      <img src={deleteImg} alt="delete" onClick={(e) => removeTask(item._id)}/>
     </div>
   )
 }
