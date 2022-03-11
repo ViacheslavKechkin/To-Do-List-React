@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import './App.scss';
+import axios from 'axios';
 import Todoinput from './components/Todoinput/Todoinput';
 import Todolist from './components/Todolist/Todolist';
+import './App.scss';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -21,8 +21,6 @@ const App = () => {
     }).then(res => {
       setText('');
       setTasks(res.data.data);
-      console.log(res.data.data);
-      console.log(text);
     });
   }
 

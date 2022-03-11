@@ -4,7 +4,6 @@ const Todoinput = ({ addNewTask, setText, text }) => {
 
   const handleChange = (e) => {
     setText(e.target.value)
-
   }
 
   return (
@@ -17,6 +16,5 @@ const Todoinput = ({ addNewTask, setText, text }) => {
     </div>
   )
 }
-
 
 export default Todoinput;
