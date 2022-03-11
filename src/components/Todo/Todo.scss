@@ -1,0 +1,24 @@
+.el-todo {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 10px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .el-text {
+    font-size: 25px;
+    margin: 0 0 0 10px;
+    word-wrap: break-word;
+    width: 400px;
+  }
+}
