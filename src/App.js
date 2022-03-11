@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Todoinput from './components/Todoinput/Todoinput';
 import Todolist from './components/Todolist/Todolist';
+import Todoinput from './components/Todoinput/Todoinput';
 import './App.scss';
 
 const App = () => {

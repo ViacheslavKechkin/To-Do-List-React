@@ -1,6 +1,6 @@
 import React from "react";
-import deleteImg from './img/delete.png';
 import editImg from './img/edit.png';
+import deleteImg from './img/delete.png';
 import './Todo.scss';
 
 const Todo = ({text, item}) => {
@@ -15,8 +15,8 @@ const Todo = ({text, item}) => {
       <div className="el-text">
         {item.text}
       </div>
-      <img src={editImg} alt="edit"></img>
-      <img src={deleteImg} alt="delete"></img>
+      <img src={editImg} alt="edit"/>
+      <img src={deleteImg} alt="delete"/>
     </div>
   )
 }
