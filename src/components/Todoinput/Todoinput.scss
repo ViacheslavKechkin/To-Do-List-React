@@ -1,0 +1,21 @@
+.todo-input {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  input {
+    height: 25px;
+    color: blue;
+  }
+
+  button {
+    margin-top: 10px;
+    margin: 10px 0 10px 0;
+    height: 30px;
+    background-color: rgb(255, 153, 0);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 5px grey;
+  }
+}
