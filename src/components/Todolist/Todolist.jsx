@@ -1,13 +1,14 @@
 import Todo from '../Todo/Todo';
 import './Todolist.scss';
 
-const Todolist = ({ text, tasks, removeTask }) => {
+const Todolist = ({ tasks, removeTask, changeCheckbox }) => {
 
   return (
     <div>
       {tasks.map((item, index) => {
         return (
           <Todo
+            changeCheckbox={changeCheckbox}
             removeTask={removeTask}
             item={item}
             key={`index-${index}`}

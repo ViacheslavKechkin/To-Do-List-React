@@ -30,6 +30,16 @@ const App = () => {
     });
   }
 
+  const changeCheckbox = async (_id, isCheck) => {
+
+    await axios.patch('http://localhost:8000/updateTask', {
+      _id,
+      isCheck: !isCheck
+    }).then(res => {
+      setTasks(res.data.data);
+    });
+  }
+
   return (
     <div className='App'>
       <h1 className='header'>My ToDo</h1>
@@ -39,8 +49,8 @@ const App = () => {
         text={text}
       />
       <Todolist
+        changeCheckbox={changeCheckbox}
         removeTask={removeTask}
-        text={text}
         tasks={tasks}
       />
     </div>
