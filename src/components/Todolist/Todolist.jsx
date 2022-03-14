@@ -1,18 +1,19 @@
 import Todo from '../Todo/Todo';
 import './Todolist.scss';
 
-const Todolist = ({ text, tasks }) => {
+const Todolist = ({ text, tasks, removeTask }) => {
 
   return (
     <div>
       {tasks.map((item, index) => {
-          return (
-            <Todo
-              item={item}
-              key={`index-${index}`}
-            />
-          )
-        })}
+        return (
+          <Todo
+            removeTask={removeTask}
+            item={item}
+            key={`index-${index}`}
+          />
+        )
+      })}
     </div>
   )
 }
