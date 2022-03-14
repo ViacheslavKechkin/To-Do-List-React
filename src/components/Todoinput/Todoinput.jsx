@@ -5,7 +5,7 @@ const Todoinput = ({ addNewTask, setText, text }) => {
   const handleChange = (e) => {
     setText(e.target.value)
   }
-
+  
   return (
     <div className='todo-input'>
       <input

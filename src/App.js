@@ -15,13 +15,17 @@ const App = () => {
   }, [])
 
   const addNewTask = async () => {
-    await axios.post('http://localhost:8000/createTask', {
-      text,
-      isCheck: false
-    }).then(res => {
-      setText('');
-      setTasks(res.data.data);
-    });
+    if (text !== '') {
+      await axios.post('http://localhost:8000/createTask', {
+        text,
+        isCheck: false
+      }).then(res => {
+        setText('');
+        setTasks(res.data.data);
+      });
+    } else {
+      alert('Enter task text, please')
+    }
   }
 
   const removeTask = async (id) => {
@@ -31,7 +35,6 @@ const App = () => {
   }
 
   const changeCheckbox = async (_id, isCheck) => {
-
     await axios.patch('http://localhost:8000/updateTask', {
       _id,
       isCheck: !isCheck

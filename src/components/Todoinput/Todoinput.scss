@@ -19,3 +19,9 @@
     box-shadow: 0 0 5px grey;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .todo-input {
+    width: 270px;
+  }
+}
