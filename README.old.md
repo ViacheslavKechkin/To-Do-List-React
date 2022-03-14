@@ -7,5 +7,6 @@ npm init
 npm i node-sass
 npm i axios
 npm i lodash
+npm i react-router-dom
 
 To start - npm start
