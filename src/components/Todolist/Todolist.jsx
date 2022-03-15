@@ -1,17 +1,15 @@
 import Todo from '../Todo/Todo';
-import lodash from 'lodash'
+import _ from 'lodash'
 import './Todolist.scss';
 
-const _ = lodash;
-
-const Todolist = ({ tasks, removeTask, changeCheckbox, updateTask }) => {
+const Todolist = ({ tasks, removeTask, changeCheckbox }) => {
 
   return (
     <div className='list-wrapper'>
       {_.sortBy(tasks, 'isCheck').map((item, index) => {
+
         return (
           <Todo
-            updateTask={updateTask}
             changeCheckbox={changeCheckbox}
             removeTask={removeTask}
             item={item}

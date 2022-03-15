@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
-import Todolist from './components/Todolist/Todolist';
 import Todoinput from './components/Todoinput/Todoinput';
+import Openinput from './components/Openinput/Openinput';
+import Todolist from './components/Todolist/Todolist';
 import './App.scss';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [text, setText] = useState('');
+  const [textUpdate, setTextUpdate] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:8000/allTasks').then(res => {
@@ -43,24 +46,34 @@ const App = () => {
     });
   }
 
-  const updateTask = () => {
-    console.log('HELLO!!!');
-  }
-
   return (
     <div className='App'>
-      <h1 className='header'>My ToDo</h1>
-      <Todoinput
-        addNewTask={addNewTask}
-        setText={setText}
-        text={text}
-      />
-      <Todolist
-        updateTask={updateTask}
-        changeCheckbox={changeCheckbox}
-        removeTask={removeTask}
-        tasks={tasks}
-      />
+
+      <Routes>
+        <Route path='/' element={
+          <div>
+            <h1 className='header'>My ToDo</h1>
+            <Todoinput
+              addNewTask={addNewTask}
+              setText={setText}
+              text={text}
+            />
+            <Todolist
+              changeCheckbox={changeCheckbox}
+              removeTask={removeTask}
+              tasks={tasks}
+            />
+          </div>
+        }>
+        </Route>
+        <Route path='/update/:id' element={
+          <Openinput
+            text={text}
+            setTasks={setTasks}
+            setTextUpdate={setTextUpdate}
+            textUpdate={textUpdate}
+          />} />
+      </Routes>
     </div>
   );
 }
