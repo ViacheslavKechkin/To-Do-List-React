@@ -43,6 +43,10 @@ const App = () => {
     });
   }
 
+  const updateTask = () => {
+    console.log('HELLO!!!');
+  }
+
   return (
     <div className='App'>
       <h1 className='header'>My ToDo</h1>
@@ -52,6 +56,7 @@ const App = () => {
         text={text}
       />
       <Todolist
+        updateTask={updateTask}
         changeCheckbox={changeCheckbox}
         removeTask={removeTask}
         tasks={tasks}
