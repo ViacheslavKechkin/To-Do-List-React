@@ -5,9 +5,7 @@ import deleteImg from './img/delete.png';
 import './Todo.scss';
 
 const Todo = ({ item, removeTask, changeCheckbox }) => {
-  const { isCheck } = item;
-  const { _id } = item;
-  const { text } = item;
+  const { isCheck, _id, text } = item;
 
   return (
     <div className="el-todo">

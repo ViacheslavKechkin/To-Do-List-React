@@ -9,6 +9,7 @@ import './Openinput.scss'
 const Openinput = ({ setTasks, setTextUpdate, textUpdate }) => {
   const params = useParams();
   const { id } = params;
+  
 
   useEffect(() => {
     axios.get('http://localhost:8000/allTasks').then(res => {

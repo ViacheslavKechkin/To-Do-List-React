@@ -68,7 +68,6 @@ const App = () => {
         </Route>
         <Route path='/update/:id' element={
           <Openinput
-            text={text}
             setTasks={setTasks}
             setTextUpdate={setTextUpdate}
             textUpdate={textUpdate}
