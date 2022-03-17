@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
+import Mysnackbar from './components/Mysnackbar/Mysnackbar';
 import Todoinput from './components/Todoinput/Todoinput';
 import Openinput from './components/Openinput/Openinput';
 import Todolist from './components/Todolist/Todolist';
@@ -10,6 +11,13 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
   const [text, setText] = useState('');
   const [textUpdate, setTextUpdate] = useState('');
+  const [mySnackBar, setMySnackBar] = useState({ open: false });
+
+  const { open } = mySnackBar;
+
+  const handleCloseBar = () => {
+    setMySnackBar({open: false });
+  };
 
   useEffect(() => {
     axios.get('http://localhost:8000/allTasks').then(res => {
@@ -27,7 +35,7 @@ const App = () => {
         setTasks(res.data.data);
       });
     } else {
-      alert('Enter task text, please')
+      setMySnackBar({ open: true})
     }
   }
 
@@ -48,7 +56,10 @@ const App = () => {
 
   return (
     <div className='App'>
-
+      <Mysnackbar
+        open={open}
+        handleCloseBar={handleCloseBar}
+      />
       <Routes>
         <Route path='/' element={
           <div>

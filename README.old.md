@@ -8,5 +8,6 @@ npm i node-sass
 npm i axios
 npm i lodash
 npm i react-router-dom
+npm install @mui/material @emotion/react @emotion/styled
 
 To start - npm start
