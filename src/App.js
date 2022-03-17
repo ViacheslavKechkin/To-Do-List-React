@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Mysnackbar from './components/Mysnackbar/Mysnackbar';
 import Todoinput from './components/Todoinput/Todoinput';
 import Openinput from './components/Openinput/Openinput';
 import Todolist from './components/Todolist/Todolist';
+import MyContext from './context';
 import './App.scss';
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
   const [text, setText] = useState('');
   const [textUpdate, setTextUpdate] = useState('');
   const [mySnackBar, setMySnackBar] = useState({ open: false });
-
+  
+  const {tasks, setTasks} = useContext(MyContext);
+  
   const { open } = mySnackBar;
 
   const handleCloseBar = () => {
@@ -23,7 +25,7 @@ const App = () => {
     axios.get('http://localhost:8000/allTasks').then(res => {
       setTasks(res.data.data);
     });
-  }, [])
+  })
 
   const addNewTask = async () => {
     if (text !== '') {
