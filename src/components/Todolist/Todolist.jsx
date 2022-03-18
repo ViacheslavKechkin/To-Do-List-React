@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import _ from 'lodash'
-import Todo from '../Todo/Todo';
 import MyContext from '../../context';
+import Todo from '../Todo/Todo';
 import './Todolist.scss';
 
 const Todolist = () => {

@@ -25,7 +25,6 @@ const Openinput = () => {
   }
 
   const updateTask = async (_id) => {
-    console.log('zashol');
     const text = textUpdate;
 
     if (textUpdate !== '') {
