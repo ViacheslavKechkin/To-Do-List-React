@@ -1,8 +1,11 @@
-import Todo from '../Todo/Todo';
+import React, { useContext } from "react";
 import _ from 'lodash'
+import Todo from '../Todo/Todo';
+import MyContext from '../../context';
 import './Todolist.scss';
 
-const Todolist = ({ tasks, removeTask, changeCheckbox }) => {
+const Todolist = () => {
+  const {tasks} = useContext(MyContext);
 
   return (
     <div className='list-wrapper'>
@@ -10,8 +13,6 @@ const Todolist = ({ tasks, removeTask, changeCheckbox }) => {
 
         return (
           <Todo
-            changeCheckbox={changeCheckbox}
-            removeTask={removeTask}
             item={item}
             key={`index-${index}`}
           />

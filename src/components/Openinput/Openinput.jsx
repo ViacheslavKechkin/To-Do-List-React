@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import _ from 'lodash'
+import MyContext from '../../context';
 import backImg from './img/back.png';
 import doneImg from './img/done.png';
 import './Openinput.scss'
 
-const Openinput = ({ setTasks, setTextUpdate, textUpdate }) => {
+const Openinput = () => {
+  const {setTasks, setTextUpdate, textUpdate} = useContext(MyContext);
   const params = useParams();
   const { id } = params;
 
