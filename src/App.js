@@ -1,4 +1,4 @@
-import React, {  useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import MyContext from './context';
@@ -9,18 +9,18 @@ import Mysnackbar from './components/Mysnackbar/Mysnackbar';
 import './App.scss';
 
 const App = () => {
-  const {setTasks, mySnackBar, setMySnackBar} = useContext(MyContext);
+  const { setTasks, mySnackBar, setMySnackBar } = useContext(MyContext);
   const { open } = mySnackBar;
 
   const handleCloseBar = () => {
-    setMySnackBar({open: false });
+    setMySnackBar({ open: false });
   };
 
   useEffect(() => {
     axios.get('http://localhost:8000/allTasks').then(res => {
       setTasks(res.data.data);
     });
-  })
+  }, [setTasks])
 
   return (
     <div className='App'>
@@ -33,12 +33,12 @@ const App = () => {
           <div>
             <h1 className='header'>My ToDo</h1>
             <Todoinput />
-            <Todolist/>
+            <Todolist />
           </div>
         }>
         </Route>
         <Route path='/update/:id' element={
-          <Openinput/>} />
+          <Openinput />} />
       </Routes>
     </div>
   );

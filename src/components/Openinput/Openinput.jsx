@@ -8,7 +8,7 @@ import doneImg from './img/done.png';
 import './Openinput.scss'
 
 const Openinput = () => {
-  const {setTasks, setTextUpdate, textUpdate} = useContext(MyContext);
+  const { setTasks, setTextUpdate, textUpdate } = useContext(MyContext);
   const params = useParams();
   const { id } = params;
 
@@ -16,7 +16,7 @@ const Openinput = () => {
     axios.get('http://localhost:8000/allTasks').then(res => {
       const myItem = _.find(res.data.data, ['_id', id]);
       const { text } = myItem;
-      setTextUpdate(text)
+      setTextUpdate(text.trim())
     });
   }, [id, setTextUpdate])
 
@@ -25,6 +25,7 @@ const Openinput = () => {
   }
 
   const updateTask = async (_id) => {
+    console.log('zashol');
     const text = textUpdate;
 
     if (textUpdate !== '') {
