@@ -1,5 +1,4 @@
 .todo-input {
-  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,5 +16,11 @@
     border: none;
     cursor: pointer;
     box-shadow: 0 0 5px grey;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .todo-input {
+    width: 270px;
   }
 }

@@ -1,6 +1,9 @@
+import React, { useContext } from "react";
+import MyContext from '../../context';
 import './Todoinput.scss';
 
-const Todoinput = ({ addNewTask, setText, text }) => {
+const Todoinput = () => {
+  const { text, setText, addNewTask } = useContext(MyContext);
 
   const handleChange = (e) => {
     setText(e.target.value)

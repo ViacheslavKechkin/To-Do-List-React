@@ -1,6 +1,7 @@
 .el-todo {
   display: flex;
   align-items: center;
+  margin-top: 30px;
 
   input {
     margin-right: 10px;
@@ -20,5 +21,17 @@
     margin: 0 0 0 10px;
     word-wrap: break-word;
     width: 400px;
+  }
+
+  @media screen and (max-width: 550px) {
+    .el-text {
+      width: 150px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .el-text {
+      width: 130px;
+    }
   }
 }
